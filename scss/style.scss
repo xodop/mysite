@@ -154,14 +154,12 @@ body{
 
 .about {
   display: flex;
-  justify-content: center;
   &__photo {
-    display: flex;
-    flex: 0 0 50%;
+    flex: 0 0 60%;
   }
   &__content {
-    flex: 1 1 50%;
     display: flex;
+    flex: 1 1 40%;
     flex-direction: column;
     align-items: flex-start;
     padding: 0 15px;
@@ -181,11 +179,13 @@ body{
   }
   padding: 0 0 40px 0;
 }
+.about>.container>.container__row {
+  margin: 0 0px;
+}
 
 .photo {
   max-width: 0.35*959px;
   max-height: 0.35*1280px;
-  box-sizing: border-box;
   border: 1px solid #7D2121;
   box-shadow: -50px 40px 0px #7D2121;
   margin: 0 0 0 50px;
