@@ -99,6 +99,10 @@ body {
   gap: 10px;
 }
 
+.header > .container > .container__row {
+  width: 100%;
+}
+
 .container {
   display: flex;
   max-width: 1200px;
@@ -107,7 +111,6 @@ body {
   justify-content: space-between;
 }
 .container__row {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -209,14 +212,16 @@ body {
   padding: 0 0 40px 0;
 }
 .about__photo {
+  display: flex;
   flex: 0 0 45%;
+  align-items: flex-end;
 }
 .about__content {
   display: flex;
   flex: 1 1 55%;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 15px;
+  padding: 0 7.5px;
 }
 .about__titleblack {
   padding: 20px 0 60px 0;
@@ -233,7 +238,7 @@ body {
 }
 
 .about > .container > .container__row {
-  margin: 0 0px;
+  margin: 0 -7.5px;
 }
 
 .photo {
@@ -274,6 +279,7 @@ body {
   flex: 1 1 25%;
   padding: 0 10px;
   min-width: 240px;
+  max-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -282,13 +288,13 @@ body {
   order: 0;
 }
 .skills__column_net {
-  order: 1;
+  order: 3;
 }
 .skills__column_web {
   order: 2;
 }
 .skills__column_idea {
-  order: 3;
+  order: 1;
 }
 .skills__column:hover {
   box-shadow: 0 0 20px rgba(108, 32, 32, 0.15);
@@ -302,6 +308,7 @@ body {
   padding: 0 0 5px 0;
 }
 .skills > .container > .container__row {
+  flex: 1 1 auto;
   margin: 0 -10px;
 }
 
@@ -384,14 +391,46 @@ body {
   }
 }
 @media (max-width: 992px) {
+  body {
+    font-size: 16px;
+  }
   .container {
     max-width: 750px;
+  }
+  .header {
+    margin: 0 0 20px 0;
+  }
+  .contacts__icon {
+    max-width: 20px;
+    max-height: 20px;
+  }
+  .about {
+    padding: 0 0 20px 0;
   }
   .about__photo {
     flex: 0 0 55%;
   }
   .about__content {
     flex: 1 1 45%;
+  }
+  .about__titleblack {
+    padding: 0px 0 20px 0;
+    font-size: 26px;
+  }
+  .about__titlered {
+    padding: 0 0 20px 0;
+    font-size: 40px;
+  }
+  .about__textbox {
+    padding: 0 0 20px 0;
+  }
+  .about__button {
+    display: flex;
+    padding: 0 0 0 15%;
+  }
+  .photo {
+    box-shadow: -40px 20px 0px #7D2121;
+    margin: 0 0 0 40px;
   }
   .footer__right {
     padding: 0;

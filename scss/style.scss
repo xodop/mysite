@@ -36,6 +36,9 @@ body{
   }
   margin: 0 0 60px 0;
 }
+.header>.container>.container__row{
+  width: 100%;
+}
 
 .container {
   display: flex;
@@ -44,7 +47,6 @@ body{
   margin: 0px auto;
   justify-content: space-between;
   &__row {
-      width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -138,14 +140,16 @@ body{
 .about {
   display: flex;
   &__photo {
+    display: flex;
     flex: 0 0 45%;
+    align-items: flex-end;
   }
   &__content {
     display: flex;
     flex: 1 1 55%;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 15px;
+    padding: 0 7.5px;
   }
   &__titleblack{
     padding: 20px 0 60px 0;
@@ -163,7 +167,7 @@ body{
   padding: 0 0 40px 0;
 }
 .about>.container>.container__row {
-  margin: 0 0px;
+  margin: 0 -7.5px;
 }
 
 .photo {
@@ -201,13 +205,14 @@ body{
     flex: 1 1 25%;
     padding: 0 10px;
     min-width: 240px;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     &_cicd{order: 0;}
-    &_net{order: 1;}
+    &_net{order: 3;}
     &_web{order: 2;}
-    &_idea{order: 3;}
+    &_idea{order: 1;}
   }
   &__column:hover {
     box-shadow: 0 0 20px rgba(108, 32, 32, 0.15);
@@ -225,6 +230,7 @@ body{
   padding: 10px 0 70px 0;
 }
 .skills>.container>.container__row{
+  flex: 1 1 auto;
   margin: 0 -10px;
 }
 
@@ -313,8 +319,20 @@ body{
 }
 
 @media (max-width: 992px) {
+  body {
+    font-size: 16px;
+  }
   .container {
     max-width: 750px;
+  }
+  .header{
+    margin: 0 0 20px 0;
+  }
+  .contacts {
+    &__icon {
+      max-width: 20px;
+      max-height: 20px;
+    }
   }
   .about {
     &__photo {
@@ -323,7 +341,27 @@ body{
     &__content {
       flex: 1 1 45%;
     }
+    &__titleblack {
+      padding: 0px 0 20px 0;
+      font-size: 26px;
+    }
+    &__titlered {
+      padding: 0 0 20px 0;
+      font-size: 40px;
+    }
+    &__textbox {
+      padding: 0 0 20px 0;
+    }
+    &__button {
+      display: flex;
+      padding: 0 0 0 15%;
+    }
+    padding: 0 0 20px 0;
   } 
+  .photo {
+    box-shadow: -40px 20px 0px #7D2121;
+    margin: 0 0 0 40px;
+  }
   .footer {
     &__right {
       padding: 0;
