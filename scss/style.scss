@@ -13,6 +13,9 @@ body{
   font-size: 20px;
   line-height: 26px;
 }
+//.preload * {
+//  animation: none !important;
+//}
 
 .wrapper {
   background: linear-gradient(142.63deg, #DBB275 31.74%, rgba(219, 178, 117, 0) 109.69%);
@@ -22,7 +25,10 @@ body{
 }
 
 .header {
+  background: linear-gradient(142.63deg, #DBB275 100%, rgba(219, 178, 117, 0) 109.69%);
   max-height: 60px;
+  position: fixed;
+  width: 100%;
   &__left {
     flex: 0 1 33.333%;
   }
@@ -34,10 +40,14 @@ body{
     justify-content: flex-end;
     gap: 10px;
   }
-  margin: 0 0 60px 0;
 }
 .header>.container>.container__row{
   width: 100%;
+  flex-wrap: nowrap;
+}
+header:hover {
+  transition-duration: 300ms;
+  box-shadow: 0 0 20px rgba(108, 32, 32, 0.15);
 }
 
 .container {
@@ -53,12 +63,17 @@ body{
   }
 }
 
+.anchor{
+  padding-top: 60px;
+  margin-top: -60px;
+}
+
 .main{
+  margin: 100px 0 0 0;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
 }
-
 
 .annotation {
   display: flex;
@@ -73,6 +88,39 @@ body{
       border-radius: 50%;
       overflow: hidden;
       flex: 0 0 auto;
+  }
+}
+
+.icon-animation{
+  padding: 10px 10px;
+  animation: spinner-little 1s ease-out alternate 0s forwards;
+}
+.icon-animation:hover{
+  //animation-name: spinner;
+  //animation-duration: 2s;
+  //animation-timing-function: ease-out;
+  //animation-iteration-count: 1;
+  //animation-direction: alternate;
+  //animation-delay: 0s;
+  //animation-fill-mode: forwards;
+  animation: spinner-big 0.1s ease-out infinite 0s forwards, scale-big 3s linear 0s forwards;
+}
+@keyframes spinner-big{
+  100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes scale-big {
+  100% {
+    transform: scale(7);
+  }
+}
+@keyframes spinner-little {
+  0% {
+    transform: scale(7) rotate(360deg);
+  }
+  100% {
+    transform: scale(1) rotate(-360deg);
   }
 }
 
@@ -105,7 +153,12 @@ body{
     align-items: center;
     white-space: nowrap;
   }
+  &__column>a:hover {
+      color: #7D2121;
+      transition-duration: 100ms;
+  }
 }
+
 
 .contacts {
   display: flex;
@@ -117,6 +170,17 @@ body{
       max-width: 15px;
       max-height: 15px;
     }
+  }
+    &__icon:hover {
+       animation: backlight 0.3s ease-out forwards;
+    }
+    &__icon:active {
+      animation: none;
+    }
+}
+@keyframes backlight{
+  100%{
+    transform: scale(1.15); 
   }
 }
 
@@ -185,6 +249,7 @@ body{
   min-height: 40px;
   border-radius: 2px;
   padding: 10px 40px;
+  transition-duration: 300ms;
 }
 .press:hover{
   color: black;
@@ -209,6 +274,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition-duration: 500ms;
     &_cicd{order: 0;}
     &_net{order: 3;}
     &_web{order: 2;}

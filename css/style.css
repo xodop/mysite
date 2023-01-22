@@ -84,8 +84,10 @@ body {
 }
 
 .header {
+  background: linear-gradient(142.63deg, #DBB275 100%, rgba(219, 178, 117, 0) 109.69%);
   max-height: 60px;
-  margin: 0 0 60px 0;
+  position: fixed;
+  width: 100%;
 }
 .header__left {
   flex: 0 1 33.333%;
@@ -101,6 +103,12 @@ body {
 
 .header > .container > .container__row {
   width: 100%;
+  flex-wrap: nowrap;
+}
+
+header:hover {
+  transition-duration: 300ms;
+  box-shadow: 0 0 20px rgba(108, 32, 32, 0.15);
 }
 
 .container {
@@ -116,7 +124,13 @@ body {
   justify-content: space-between;
 }
 
+.anchor {
+  padding-top: 60px;
+  margin-top: -60px;
+}
+
 .main {
+  margin: 100px 0 0 0;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -138,6 +152,54 @@ body {
   flex: 0 0 auto;
 }
 
+.icon-animation {
+  padding: 10px 10px;
+  -webkit-animation: spinner-little 1s ease-out alternate 0s forwards;
+          animation: spinner-little 1s ease-out alternate 0s forwards;
+}
+
+.icon-animation:hover {
+  -webkit-animation: spinner-big 0.1s ease-out infinite 0s forwards, scale-big 3s linear 0s forwards;
+          animation: spinner-big 0.1s ease-out infinite 0s forwards, scale-big 3s linear 0s forwards;
+}
+
+@-webkit-keyframes spinner-big {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner-big {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes scale-big {
+  100% {
+    transform: scale(7);
+  }
+}
+@keyframes scale-big {
+  100% {
+    transform: scale(7);
+  }
+}
+@-webkit-keyframes spinner-little {
+  0% {
+    transform: scale(7) rotate(360deg);
+  }
+  100% {
+    transform: scale(1) rotate(-360deg);
+  }
+}
+@keyframes spinner-little {
+  0% {
+    transform: scale(7) rotate(360deg);
+  }
+  100% {
+    transform: scale(1) rotate(-360deg);
+  }
+}
 .title-text_prof {
   font-size: 32px;
   font-weight: 400;
@@ -166,6 +228,10 @@ body {
   align-items: center;
   white-space: nowrap;
 }
+.navigation__column > a:hover {
+  color: #7D2121;
+  transition-duration: 100ms;
+}
 
 .contacts {
   display: flex;
@@ -179,7 +245,26 @@ body {
   max-width: 15px;
   max-height: 15px;
 }
+.contacts__icon:hover {
+  -webkit-animation: backlight 0.3s ease-out forwards;
+          animation: backlight 0.3s ease-out forwards;
+}
+.contacts__icon:active {
+  -webkit-animation: none;
+          animation: none;
+}
 
+@-webkit-keyframes backlight {
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes backlight {
+  100% {
+    transform: scale(1.15);
+  }
+}
 .link {
   display: flex;
   justify-content: center;
@@ -256,6 +341,7 @@ body {
   min-height: 40px;
   border-radius: 2px;
   padding: 10px 40px;
+  transition-duration: 300ms;
 }
 
 .press:hover {
@@ -283,6 +369,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition-duration: 500ms;
 }
 .skills__column_cicd {
   order: 0;
