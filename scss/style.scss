@@ -13,9 +13,9 @@ body{
   font-size: 20px;
   line-height: 26px;
 }
-//.preload * {
-//  animation: none !important;
-//}
+.preload * {
+  animation: none !important;
+}
 
 .wrapper {
   background: linear-gradient(142.63deg, #DBB275 31.74%, rgba(219, 178, 117, 0) 109.69%);
@@ -93,18 +93,24 @@ header:hover {
 
 .icon-animation{
   padding: 10px 10px;
-  animation: spinner-little 1s ease-out alternate 0s forwards;
+  &_mouseover {
+      animation: spinner-big 0.1s ease-out infinite 0s forwards, scale-big 3s linear 0s forwards;
+    }
+  &_mouseout{
+    animation: spinner-little 1s ease-out alternate 0s forwards;
+  }
 }
+/*
 .icon-animation:hover{
-  //animation-name: spinner;
-  //animation-duration: 2s;
-  //animation-timing-function: ease-out;
-  //animation-iteration-count: 1;
-  //animation-direction: alternate;
-  //animation-delay: 0s;
-  //animation-fill-mode: forwards;
-  animation: spinner-big 0.1s ease-out infinite 0s forwards, scale-big 3s linear 0s forwards;
+  animation-name: spinner;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
+*/
 @keyframes spinner-big{
   100%{
     transform: rotate(360deg);
