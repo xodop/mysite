@@ -77,8 +77,7 @@ body {
 }
 
 .preload * {
-  -webkit-animation: none !important;
-          animation: none !important;
+  animation: none !important;
 }
 
 .wrapper {
@@ -161,12 +160,10 @@ header:hover {
   padding: 10px 10px;
 }
 .icon-animation_mouseover {
-  -webkit-animation: spinner-big 0.1s ease-out infinite 0s forwards, scale-big 3s linear 0s forwards;
-          animation: spinner-big 0.1s ease-out infinite 0s forwards, scale-big 3s linear 0s forwards;
+  animation: spinner-big 0.1s ease-out infinite 0s forwards, scale-big 3s linear 0s forwards;
 }
 .icon-animation_mouseout {
-  -webkit-animation: spinner-little 1s ease-out alternate 0s forwards;
-          animation: spinner-little 1s ease-out alternate 0s forwards;
+  animation: spinner-little 1s ease-out alternate 0s forwards;
 }
 
 /*
@@ -180,32 +177,14 @@ header:hover {
   animation-fill-mode: forwards;
 }
 */
-@-webkit-keyframes spinner-big {
-  100% {
-    transform: rotate(360deg);
-  }
-}
 @keyframes spinner-big {
   100% {
     transform: rotate(360deg);
   }
 }
-@-webkit-keyframes scale-big {
-  100% {
-    transform: scale(7);
-  }
-}
 @keyframes scale-big {
   100% {
     transform: scale(7);
-  }
-}
-@-webkit-keyframes spinner-little {
-  0% {
-    transform: scale(7) rotate(360deg);
-  }
-  100% {
-    transform: scale(1) rotate(-360deg);
   }
 }
 @keyframes spinner-little {
@@ -262,18 +241,10 @@ header:hover {
   max-height: 15px;
 }
 .contacts__icon:hover {
-  -webkit-animation: backlight 0.3s ease-out forwards;
-          animation: backlight 0.3s ease-out forwards;
+  animation: backlight 0.3s ease-out forwards;
 }
 .contacts__icon:active {
-  -webkit-animation: none;
-          animation: none;
-}
-
-@-webkit-keyframes backlight {
-  100% {
-    transform: scale(1.15);
-  }
+  animation: none;
 }
 
 @keyframes backlight {
